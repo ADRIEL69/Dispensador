@@ -1,0 +1,24 @@
+/*CLASE Nodo. Tiene la finalidad de definir las características 
+de los elementos (nodos) de la lista, de tal forma que al crear 
+un objeto de esta clase se permita almacenar 
+un dato y la referencia el siguiente elemento de la lista. */
+
+
+package listaSimplementeEnlazada;
+public class Nodo {
+private int dato;
+Nodo sig;
+
+public Nodo(){ // constructor
+dato - 0;
+sig - null;
+}
+
+public int getDato(){
+return dato;
+}
+
+public void setDato(int dato){
+this.dato=dato;
+}
+}
