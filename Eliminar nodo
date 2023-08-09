@@ -1,1 +1,35 @@
-
+public int eliminarNodo(int dato){
+Nodo p = cab,q=null;
+while(p != null && p.getDato() != dato){
+q=p;
+p=p.sig;
+}
+if(q == null){
+//caso 1: q==null
+if(p == null){
+//lista vacia
+return -1;
+}else{
+//verificar si se elimina el primer elemento de la lista
+if(p.getDato() == dato ){
+//eliminar el primer elemento de la lista
+cab = cab.sig;
+return 0;
+}else{
+return -1;
+}
+}
+else{
+//caso 2: q != null
+if(p == null){
+//no se encuentra dato en la lusta
+return -1;
+}
+else{
+//se elimina el elemento encontrado
+q.sig = p.sig;
+return 0;
+}
+}
+}
+}
