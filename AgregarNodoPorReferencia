@@ -1,0 +1,20 @@
+// agregar despues por referencia 
+
+public void agregarPorReferencia(int referencia, int dato){
+//define un nuevo nodo
+Nodo nuevo = new Nodo ();
+//agrega al valor al nodo 
+nuevo.setDato(dato);
+//verifica si la lista contiene elementos
+if(cab != null){
+Nodo aux = cab;
+//recorre la lista hasta llegar al nodo de referencia 
+while((aux.getDato() != referencia) && (aux.sig != null) {
+aux = aux.sig;
+}
+nuevo.sig = aux.sig;
+aux.sig = nuevo;
+} else {
+System.out.println("Lista vacia...");
+}
+}
