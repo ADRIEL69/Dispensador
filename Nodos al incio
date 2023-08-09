@@ -1,0 +1,10 @@
+public void agregarInicio (int dato){
+Nodo nuevo = new Nodo();
+nuevo.setDato(dato);
+if(cab=null){
+cab=nuevo;
+}else{
+nuevo.sig=cab;
+cab=nuevo;
+}
+}
