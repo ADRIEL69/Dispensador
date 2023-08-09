@@ -1,0 +1,16 @@
+public void agregarFinal(int dato){
+//Define un nuevo nodo
+Nodo nuevo=new Nodo();
+//Agregar el valor al dato
+nuevo.setDato(dato);
+//Verifica si la lista contiene datos
+if(cab=null){
+cab=nuevo
+}else{
+Nodo p= cab;
+while(p.sig !=null){
+p= p.sig
+}
+p.sig=nuevo;
+}
+}
