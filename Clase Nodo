@@ -1,0 +1,23 @@
+package com.mycompany.dispensador;
+
+public class Nodo {
+private int dato;
+private int comida;
+Nodo sig;
+
+public Nodo(){ 
+dato = 0;
+sig = null;
+}
+
+public int getDato(){
+return dato;
+}
+
+public void setDato(int dato){
+this.dato=dato;     
+}
+public void setComida(int comida){
+    this.comida=comida;
+}
+}
