@@ -1,0 +1,83 @@
+package com.mycompany.dispensador;
+import java.util.Scanner;
+public class Dispensador {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int opc=0,comida,kg,dividir=0,x,bandera=0,rac=0;
+        boolean validar = true;
+        Lista lista = new Lista();
+        do{
+        System.out.println("----- DISPENSADOR -----");
+        System.out.println(" 1) Visualizar cantidad de comida ");
+        System.out.println(" 2) Agregar comida");
+        System.out.println(" 3) Simular perro comiendo");
+        System.out.println("-1) Salir");
+        opc=entrada.nextInt();
+        switch (opc){
+        case 1: 
+        if(bandera!=0){
+        System.out.println(lista.obtenerLista(rac));
+        }
+        if(bandera==0){
+            validar = true;System.out.println(lista.obtenerLista(rac));
+        }
+        break;
+        case 2:
+        if(validar == true){
+        validar = false;
+        do{
+        System.out.println("Cantidad de comida que desea ingresar en g");
+        kg=entrada.nextInt();
+        }while(kg>5000);
+        System.out.println("Ingrese el peso de su perro: ");
+        comida=entrada.nextInt();
+        if(comida>0 && comida<=5){
+         rac=5;
+        dividir=kg/5;
+        bandera=5;
+        for(x=0;x<5;x++){
+        lista.agregarInicio(dividir,comida);
+        }
+        }
+        else if(comida>5 && comida<=11){
+        rac=4;
+        dividir=kg/4;
+        bandera=4;
+        for(x=0;x<4;x++){
+        lista.agregarInicio(dividir,comida);
+        }
+        }
+        if(comida>11){
+            rac=3;
+        dividir=kg/3;
+        bandera=3;
+        for(x=0;x<3;x++){
+        lista.agregarInicio(dividir,comida);
+        }
+        }
+        }else{
+            System.out.println("YA INGRESO LA CANTIDAD DEL DÍA DE HOY");
+        }
+        /*lista.agregarInicio(20);
+        lista.agregarInicio(30);
+        lista.agregarInicio(40);*/
+        break;
+        case 3:
+        if(validar == false){
+        System.out.println("Perro comiendo");
+        System.out.println("Perro comiendo.");
+        System.out.println("Perro comiendo..");
+        System.out.println("Perro comiendo...");
+        System.out.println("SU PERRO HA TERMINADO DE COMER");
+        kg=dividir;
+        bandera=bandera-1;
+      //  lista.agregarFinal(60);
+        lista.eliminarNodo(kg);
+        }
+        break;
+       // lista.agregarPorReferencia(10, 5);
+       }
+        }while(opc!=-1);
+    }
+}
