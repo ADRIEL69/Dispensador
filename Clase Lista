@@ -1,0 +1,77 @@
+package com.mycompany.dispensador;
+public class Lista {
+Nodo cab;
+public Lista(){
+  cab=null;
+}
+
+//Aqui se codifican todos los métodos que se requieren implemntar en la lista
+    
+public void agregarInicio (int kg,int a){
+Nodo nuevo = new Nodo();
+nuevo.setDato((int) kg);
+nuevo.setComida(a);
+if(cab==null){
+cab=nuevo;
+}else{
+nuevo.sig=cab;
+cab=nuevo;
+}
+}
+
+// visualizar el contenido de la lista
+public String obtenerLista(int a){
+int x=a;
+
+String contenidoLista = "Lista: \n";
+if(cab != null) {
+Nodo p = cab;
+do{
+
+contenidoLista = contenidoLista + p.getDato() +" g "+ x +" Racion \n";
+p = p.sig;
+x--;
+} while (p != null);
+return contenidoLista;
+}
+return "SU PERRO HA COMIDO TODAS LAS RACIONES DEL DÍA O NO A INGRESADO LAS RACIONES DEL DÍA DE HOY";
+}
+
+public int eliminarNodo(double kg){
+Nodo p = cab,q=null;
+
+
+while(p != null && p.getDato() != kg){
+q=p;
+p=p.sig;
+}
+if(q == null){
+//caso 1: q==null
+if(p == null){
+//lista vacia
+return -1;
+}else{
+//verificar si se elimina el primer elemento de la lista
+if(p.getDato() == kg ){
+//eliminar el primer elemento de la lista
+cab = cab.sig;
+return 0;
+}else{
+return -1;
+}
+}
+}else{
+//caso 2: q != null
+if(p == null){
+//no se encuentra dato en la lusta
+return -1;
+}
+else{
+//se elimina el elemento encontrado
+q.sig = p.sig;
+return 0;
+}
+}
+}
+
+}
