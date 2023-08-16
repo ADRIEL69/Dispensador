@@ -1,9 +1,0 @@
-package listaSimplementeEnlazada;
-public class Lista{
-Nodo cab;
-
-public Lista(){
-  cab=null;
-}
-//Aqui se codifican todos los métodos que se requieren implemntar en la lista
-}
